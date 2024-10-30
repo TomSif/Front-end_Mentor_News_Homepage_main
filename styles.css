@@ -56,11 +56,17 @@ li {
 /* Reset Links decorations */
 a {
   text-decoration: none;
-  color: var(--Dark-grayish-blue);
+  color: inherit;
 }
+
 a:hover {
   text-decoration: none;
   color: var(--Soft-orange);
+}
+
+a:focus {
+  outline: 2px solid var(--Soft-orange); /* Contour pour le focus */
+  outline-offset: 2px;
 }
 
 /* ## HIDDEN CLASSES JAVASCRIPT ACTIONS */
@@ -106,7 +112,29 @@ body {
 .header__menu__mobile--close {
   position: relative;
   z-index: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
+.header__menu__mobile--close:hover {
+  transform: scale(1.05);
+}
+
+.header__menu__mobile--close:active {
+  transform: scale(0.9);
+}
+
+/* Keyframes pour le rebond */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+/* END OF ANIMATION BURGER */
 
 .header__menu__mobile--open {
   position: absolute;
@@ -119,6 +147,23 @@ body {
   justify-content: flex-end;
   padding: 1.8rem 1rem 0 1.5rem;
   background-color: var(--Off-white);
+  transform: translateX(200px); /* Commence légèrement en haut */
+  transition: transform 0.4s ease; /* Transition douce */
+}
+
+.header__menu__mobile--open.visible {
+  transform: translateX(0); /* Retourne à la position originale */
+}
+
+.header__menu__mobile__list-container {
+  opacity: 0;
+  transform: translateX(200px); /* Commence légèrement en haut */
+  transition: opacity 0.4s ease, transform 0.7s ease; /* Transition douce */
+}
+
+.header__menu__mobile__list-container.visible {
+  transform: translateX(0); /* Retourne à la position originale */
+  opacity: 1;
 }
 
 .header__menu__mobile__list-container {
@@ -218,7 +263,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: auto; /* Still wondering why 100% overflow the container */
+  height: auto;
 }
 
 .articles__list__item {
@@ -235,6 +280,12 @@ body {
 .articles__title:hover {
   color: var(--Soft-orange);
   cursor: pointer;
+}
+
+.articles__link:focus {
+  text-decoration: none;
+  outline: 2px solid var(--Soft-orange); /* Contour pour le focus */
+  outline-offset: 2px;
 }
 
 .articles__title {
