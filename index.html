@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Front end exercise: a homepage with articles and grids."
+    />
+    <meta
+      name="keywords"
+      content="web development, frontendmentor, html, css, javascript, homepage, grids"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./modern-reset.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./main.js"></script>
+    <title>Frontend Mentor | News Homepage</title>
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Header with accessible navigation -->
+      <header class="header">
+        <nav
+          class="header__nav"
+          aria-label="Main Navigation"
+          aria-hidden="false"
+        >
+          <a href="#" aria-label="Homepage" class="header__logo">
+            <img
+              src="./assets/images/logo.svg"
+              alt="Site logo shaped like a W"
+            />
+          </a>
+          <!-- mobile version menu -->
+          <div class="header__menu__mobile--close">
+            <img
+              src="./assets/images/icon-menu.svg"
+              alt="burger menu icon"
+              aria-label="menu button"
+              aria-hidden="true"
+              class="header__menu__mobile--icon"
+            />
+          </div>
+          <div class="header__menu__mobile--open hidden" aria-hidden="true">
+            <img
+              src="./assets/images/icon-menu-close.svg"
+              alt="cross icon to close the menu"
+              aria-label="close button"
+              aria-hidden="true"
+              class="header__menu__mobile--open-img"
+            />
+            <nav>
+              <ul class="header__menu__mobile__list-container">
+                <li class="header__menu__mobile__list--item">
+                  <a href="#home" class="header__menu-link">Home</a>
+                </li>
+                <li class="header__menu__mobile__list--item">
+                  <a href="#new" class="header__menu-link">New</a>
+                </li>
+                <li class="header__menu__mobile__list--item">
+                  <a href="#popular" class="header__menu-link">Popular</a>
+                </li>
+                <li class="header__menu__mobile__list--item">
+                  <a href="#trending" class="header__menu-link">Trending</a>
+                </li>
+                <li class="header__menu__mobile__list--item">
+                  <a href="#categories" class="header__menu-link">Categories</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- desktop version -->
+          <ul class="header__menu__desktop">
+            <li class="header__menu__desktop-item">
+              <a href="#home" class="header__menu-link">Home</a>
+            </li>
+            <li class="header__menu__desktop-item">
+              <a href="#new" class="header__menu-link">New</a>
+            </li>
+            <li class="header__menu__desktop-item">
+              <a href="#popular" class="header__menu-link">Popular</a>
+            </li>
+            <li class="header__menu__desktop-item">
+              <a href="#trending" class="header__menu-link">Trending</a>
+            </li>
+            <li class="header__menu__desktop-item">
+              <a href="#categories" class="header__menu-link">Categories</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Start of the grid__layout -->
+      <div class="grid__layout">
+        <!-- Main Content -->
+        <section class="main-content__section">
+          <div class="main-content__image-container">
+            <img
+              src="./assets/images/image-web-3-mobile.jpg"
+              alt="Representation of Web 3.0 technology"
+              class="main-content__image"
+            />
+          </div>
+          <div class="main-content__text">
+            <div class="main-title--modifier">
+              <h1
+                id="main-title"
+                class="main-content__title"
+                aria-labelledby="main-title"
+              >
+                The Bright Future of Web 3.0?
+              </h1>
+            </div>
+            <div class="main-content__description">
+              <p>
+                We dive into the next evolution of the web that claims to put
+                the power of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?
+              </p>
+              <a href="#article" class="button main-content__button"
+                >READ MORE</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Additional Articles Section -->
+        <section class="articles__section" aria-labelledby="new-articles">
+          <h2 id="new-articles" class="articles__heading">New</h2>
+          <ul class="articles__list">
+            <li class="articles__list__item">
+              <h3 class="articles__title">Hydrogen VS Electric Cars</h3>
+              <p class="articles__summary">
+                Will hydrogen-fueled cars ever catch up to EVs?
+              </p>
+            </li>
+            <li class="articles__list__item">
+              <h3 class="articles__title">The Downsides of AI Artistry</h3>
+              <p class="articles__summary">
+                What are the possible adverse effects of on-demand AI image
+                generation?
+              </p>
+            </li>
+            <li class="articles__list__item">
+              <h3 class="articles__title">Is VC Funding Drying Up?</h3>
+              <p class="articles__summary">
+                Private funding by VC firms is down 50% YOY. We take a look at
+                what that means.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Footer with Additional Content -->
+        <section class="footer__section grid-item">
+          <ul class="footer__list">
+            <li class="footer__list__item item1">
+              <img
+                src="./assets/images/image-retro-pcs.jpg"
+                alt="Retro PC image"
+                class="footer__image"
+              />
+              <div class="footer__list__text-container">
+                <h4 class="footer__rank">01</h4>
+                <h5 class="footer__title">Reviving Retro PCs</h5>
+                <p class="footer__description">
+                  What happens when old PCs are given modern upgrades?
+                </p>
+              </div>
+            </li>
+            <li class="footer__list__item item2">
+              <img
+                src="./assets/images/image-top-laptops.jpg"
+                alt="Top laptops of 2022"
+                class="footer__image"
+              />
+              <div class="footer__list__text-container">
+                <h4 class="footer__rank">02</h4>
+                <h5 class="footer__title">Top 10 Laptops of 2022</h5>
+                <p class="footer__description">
+                  Our best picks for various needs and budgets.
+                </p>
+              </div>
+            </li>
+            <li class="footer__list__item item3">
+              <img
+                src="./assets/images/image-gaming-growth.jpg"
+                alt="Gaming growth illustration"
+                class="footer__image"
+              />
+              <div class="footer__list__text-container">
+                <h4 class="footer__rank">03</h4>
+                <h5 class="footer__title">The Growth of Gaming</h5>
+                <p class="footer__description">
+                  How the pandemic has sparked fresh opportunities.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <!-- End of the grid__layout -->
+    </div>
+  </body>
+</html>
